@@ -1,0 +1,40 @@
+<div class="container mt-6">
+  <div class="row">
+    <div class="mb-3">
+      <label for="search" class="form-label">
+        <strong> Pequisar </strong>
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="search"
+        aria-describedby="searchHelp"
+        [(ngModel)]="searchTerm"
+      />
+      <div id="searchHelp" class="form-text">
+        Pode ser feita a pesquisa pelo nome da linha, tanto de lotação quanto de
+        ônibus
+      </div>
+    </div>
+  </div>
+  <div class="row mt-6">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="row">
+          <h4>Linhas de ônibus</h4>
+        </div>
+        <div class="row">
+          <app-bus-lines [searchTerm]="searchTerm"></app-bus-lines>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <h4>Linhas de lotação</h4>
+        </div>
+        <div class="row">
+          <app-micro-bus-lines [searchTerm]="searchTerm"></app-micro-bus-lines>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

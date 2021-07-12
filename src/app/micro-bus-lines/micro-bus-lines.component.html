@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="row" *ngFor="let microbusLine of allMicroBusLines">
+      <div class="col mx-auto">
+        <div class="card mt-3" routerLink="/itinerary/{{ microbusLine.id }}">
+          <div class="card-header">código: {{ microbusLine.codigo }}</div>
+          <div class="card-body">
+            {{ microbusLine.nome }}
+          </div>
+          <div class="card-footer">id: {{ microbusLine.id }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="allMicroBusLines.length == 0">
+      <span> Nenhum resultado encontrado </span>
+    </div>
+  </div>
+</div>
